@@ -3,10 +3,6 @@
 - type: playTimeTracker
   id: Overall
 
-# Antags
-- type: playTimeTracker
-  id: AntagNukeops
-
 # Jobs
 - type: playTimeTracker
   id: JobAtmosphericTechnician
