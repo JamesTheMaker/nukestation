@@ -2,6 +2,7 @@
   id: Cargo
   description: department-Cargo-description
   color: "#A46106"
+  weight: 10
   roles:
   - CargoTechnician
   - Quartermaster
@@ -28,6 +29,7 @@
   id: Command
   description: department-Command-description
   color: "#334E6D"
+  weight: 100
   roles:
   - Captain
   - CentralCommandOfficial
@@ -38,7 +40,6 @@
   - ResearchDirector
   - Quartermaster
   primary: false
-  weight: 100
 
 - type: department
   id: Engineering
@@ -88,7 +89,7 @@
   id: Personnel
   description: department-Personnel-description
   color: "#9FED58"
-  weight: 10
+  weight: 0
   roles:
   - HeadOfPersonnel
   - Reporter
