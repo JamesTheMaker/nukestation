@@ -13,24 +13,16 @@
   color: "#9FED58"
   weight: -10
   roles:
-  - Bartender
-  - Borg
-  - Botanist
   - Boxer
   - Chaplain
-  - Chef
   - Clown
-  - HeadOfPersonnel
   - Janitor
   - Lawyer
   - Librarian
   - Mime
   - Musician
   - Passenger
-  - Reporter
   - Visitor
-  - Zookeeper
-  - ServiceWorker
 
 - type: department
   id: Command
@@ -90,15 +82,18 @@
   - ResearchDirector
   - Scientist
   - ResearchAssistant
+  - Borg
 
 - type: department
-  id: Specific
-  description: department-Specific-description
+  id: Personnel
+  description: department-Personnel-description
   color: "#9FED58"
   weight: 10
   roles:
-  - Boxer
+  - HeadOfPersonnel
   - Reporter
   - Zookeeper
-  - Psychologist
-  primary: false
+  - Bartender
+  - Botanist
+  - Chef
+  - ServiceWorker

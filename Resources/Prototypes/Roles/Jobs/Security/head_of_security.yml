@@ -5,16 +5,14 @@
   playTimeTracker: JobHeadOfSecurity
   requirements:
     - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 10800 #3 hrs
+      role: JobDetective
+      time: 3600 # 1 hour
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 36000 #10 hrs
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 108000 # 30 hrs
-    - !type:OverallPlaytimeRequirement
-      time: 144000 #40 hrs
+      time: 3600 # 1 hour
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 3600 # 1 hour
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

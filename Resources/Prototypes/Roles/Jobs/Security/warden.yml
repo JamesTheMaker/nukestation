@@ -5,8 +5,8 @@
   playTimeTracker: JobWarden
   requirements:
     - !type:RoleTimeRequirement
-      role: JobSecurityOfficer
-      time: 36000 #10 hrs
+      role: JobSecurityCadet
+      time: 3600 # 1 hour
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

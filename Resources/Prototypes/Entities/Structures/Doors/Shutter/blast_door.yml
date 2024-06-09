@@ -38,6 +38,10 @@
     - board
   - type: StaticPrice
     price: 280
+    openSound:
+      path: /Audio/Machines/blastdoor_open.ogg
+    closeSound:
+      path: /Audio/Machines/blastdoor_close.ogg
 
 - type: entity
   id: BlastDoorOpen
