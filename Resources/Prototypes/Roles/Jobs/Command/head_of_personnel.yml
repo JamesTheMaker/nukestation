@@ -5,16 +5,13 @@
   playTimeTracker: JobHeadOfPersonnel
   requirements:
     - !type:RoleTimeRequirement
-      role: JobQuartermaster
+      role: JobBartender
       time: 3600 # 1 hour
     - !type:RoleTimeRequirement
-      role: JobChiefEngineer
+      role: JobBotanist
       time: 3600 # 1 hour
     - !type:RoleTimeRequirement
-      role: JobChiefMedicalOfficer
-      time: 3600 # 1 hour
-    - !type:RoleTimeRequirement
-      role: JobHeadOfSecurity
+      role: JobChef
       time: 3600 # 1 hour
   weight: 20
   startingGear: HoPGear

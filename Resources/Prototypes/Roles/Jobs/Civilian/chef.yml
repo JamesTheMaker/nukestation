@@ -3,6 +3,10 @@
   name: job-name-chef
   description: job-description-chef
   playTimeTracker: JobChef
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobServiceWorker
+      time: 3600 # 1 hour
   startingGear: ChefGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
