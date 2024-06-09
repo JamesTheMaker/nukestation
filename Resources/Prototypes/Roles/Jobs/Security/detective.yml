@@ -3,6 +3,10 @@
   name: job-name-detective
   description: job-description-detective
   playTimeTracker: JobDetective
+  requirement:
+    - !type:RoleTimeRequirement
+      role: JobSecurityCadet
+      time: 3600 # 1 hour
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos

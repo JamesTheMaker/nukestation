@@ -3,6 +3,10 @@
   name: job-name-atmostech
   description: job-description-atmostech
   playTimeTracker: JobAtmosphericTechnician
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobTechnicalAssistant
+      time: 3600 # 1 hour
   startingGear: AtmosphericTechnicianGear
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce

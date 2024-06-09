@@ -4,9 +4,9 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Cargo
-      time: 7200 #2 hour
+    - !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 3600 # 1 hour
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

@@ -3,6 +3,10 @@
   name: job-name-warden
   description: job-description-warden
   playTimeTracker: JobWarden
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSecurityCadet
+      time: 3600 # 1 hour
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos

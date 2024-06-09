@@ -4,9 +4,15 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 7200 # 2 hours
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 3600 # 1 hour
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 3600 # 1 hour
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 3600 # 1 hour
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

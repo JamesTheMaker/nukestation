@@ -3,6 +3,10 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSecurityCadet
+      time: 3600 # 1 hour
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
