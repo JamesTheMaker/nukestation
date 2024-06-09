@@ -197,13 +197,14 @@
 - type: soundCollection
   id: AmbienceSpace
   files:
-    - /Audio/Ambience/constellations.ogg
-    - /Audio/Ambience/starlight.ogg
-    - /Audio/Ambience/drifting.ogg
     - /Audio/Ambience/spookyspace1.ogg
     - /Audio/Ambience/spookyspace2.ogg
+    - /Audio/Ambience/ambispace.ogg
+    - /Audio/Ambience/ambispace1.ogg
     - /Audio/Ambience/ambispace2.ogg
-    - /Audio/Lobby/title2.ogg
+    - /Audio/Ambience/ambispace3.ogg
+    - /Audio/Ambience/ambispace4.ogg
+    - /Audio/Ambience/ambispace5.ogg
 
 - type: soundCollection
   id: AmbienceSpooky
@@ -320,7 +321,7 @@
       components:
         - type: Morgue
       range: 3
-      
+
 - type: rules
   id: NearSpookyFog
   rules:
