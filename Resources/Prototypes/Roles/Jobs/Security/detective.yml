@@ -3,7 +3,7 @@
   name: job-name-detective
   description: job-description-detective
   playTimeTracker: JobDetective
-  requirement:
+  requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityCadet
       time: 3600 # 1 hour
