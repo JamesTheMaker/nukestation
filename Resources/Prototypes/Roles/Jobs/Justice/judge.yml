@@ -23,7 +23,7 @@
   equipment:
     outerClothing: ClothingOuterRobesJudge
     shoes: ClothingShoesBootsLaceup
-    id: LawyerPDA
+    id: JudgePDA
     ears: ClothingHeadsetSecurity
     # TODO add copy of space law
   storage:

@@ -15,7 +15,7 @@
   id: ClerkGear
   equipment:
     shoes: ClothingShoesBootsLaceup
-    id: LawyerPDA
+    id: ClerkPDA
     ears: ClothingHeadsetSecurity
     # TODO add copy of space law
   storage:
