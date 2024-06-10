@@ -18,7 +18,6 @@
   - Chaplain
   - Clown
   - Janitor
-  - Lawyer
   - Librarian
   - Mime
   - Musician
@@ -98,3 +97,11 @@
   - Botanist
   - Chef
   - ServiceWorker
+
+- type: department
+  id: Law
+  description: department-Law-description
+  color: "#9FED58"
+  roles:
+  - Lawyer
+  - Clerk

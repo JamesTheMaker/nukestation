@@ -5,4 +5,5 @@ department-Engineering-description = Keep the power on and the station operation
 department-Medical-description = Keep the crew healthy.
 department-Security-description = Keep the peace around the station.
 department-Science-description = Research artifacts and anomalies to invent new equipment for the station.
-department-Personnel-description = Unsung heroes of the station, performing the day-to-day tasks nobody else wnats to.
+department-Personnel-description = Perform the day-to-day tasks that nobody else wants to.
+department-Law-description = Ensure that all criminals are processed justly, and that Space Law is enforced.

@@ -1,27 +1,23 @@
 - type: job
-  id: Lawyer
-  name: job-name-lawyer
+  id: Clerk
+  name: job-name-clerk
   description: job-description-lawyer
-  playTimeTracker: JobLawyer
-  startingGear: LawyerGear
-  icon: "JobIconLawyer"
-  supervisors: job-supervisors-hop
+  playtimeTracker: JobClerk
+  startingGear: ClerkGear
+  icon: "JobIconClerk"
+  supervisors: job-supervisors-law
   access:
   - Service
   - Lawyer
-  - Brig
   - Maintenance
 
 - type: startingGear
-  id: LawyerGear
+  id: ClerkGear
   equipment:
     shoes: ClothingShoesBootsLaceup
     id: LawyerPDA
     ears: ClothingHeadsetSecurity
     # TODO add copy of space law
-  inhand:
-    - BriefcaseBrownFilled
   storage:
     back:
     - BoxSurvival
-    - RubberStampLawyer
