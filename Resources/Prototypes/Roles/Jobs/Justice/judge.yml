@@ -21,6 +21,7 @@
 - type: startingGear
   id: JudgeGear
   equipment:
+    outerClothing: ClothingOuterRobesJudge
     shoes: ClothingShoesBootsLaceup
     id: LawyerPDA
     ears: ClothingHeadsetSecurity
@@ -28,3 +29,4 @@
   storage:
     back:
     - BoxSurvival
+    - RubberStampJudge

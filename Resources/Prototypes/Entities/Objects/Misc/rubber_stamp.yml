@@ -77,17 +77,17 @@
     state: stamp-chaplain
 
 - type: entity
-  name: lawyer's rubber stamp
+  name: judge's rubber stamp
   parent: RubberStampBase
-  id: RubberStampLawyer
+  id: RubberStampJudge
   suffix: DO NOT MAP
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-lawyer
-    stampedColor: "#233D57"
-    stampState: "paper_stamp-lawyer"
+    stampedName: stamp-component-stamped-name-judge
+    stampedColor: "#191919"
+    stampState: "paper_stamp-judge"
   - type: Sprite
-    state: stamp-lawyer
+    state: stamp-judge
 
 - type: entity
   name: clown's rubber stamp
