@@ -38,6 +38,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - Judge
   primary: false
 
 - type: department
@@ -99,9 +100,10 @@
   - ServiceWorker
 
 - type: department
-  id: Law
-  description: department-Law-description
+  id: Justice
+  description: department-Justice-description
   color: "#9FED58"
   roles:
+  - Judge
   - Lawyer
   - Clerk

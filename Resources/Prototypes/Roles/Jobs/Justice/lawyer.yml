@@ -4,8 +4,12 @@
   description: job-description-lawyer
   playTimeTracker: JobLawyer
   startingGear: LawyerGear
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobClerk
+      time: 3600 # 1 hour
   icon: "JobIconLawyer"
-  supervisors: job-supervisors-judge
+  supervisors: job-supervisors-justice
   access:
   - Service
   - Lawyer

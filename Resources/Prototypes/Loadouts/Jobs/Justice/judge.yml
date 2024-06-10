@@ -1,0 +1,9 @@
+# Neck
+- type: loadout
+  id: JudgeNeck
+  equipment: JudgeNeck
+
+- type: startingGear
+  id: JudgeNeck
+  equipment:
+    neck: ClothingNeckLawyerbadge

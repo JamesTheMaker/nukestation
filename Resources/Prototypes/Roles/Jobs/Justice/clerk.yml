@@ -1,8 +1,8 @@
 - type: job
   id: Clerk
   name: job-name-clerk
-  description: job-description-lawyer
-  playtimeTracker: JobClerk
+  description: job-description-clerk
+  playTimeTracker: JobClerk
   startingGear: ClerkGear
   icon: "JobIconClerk"
   supervisors: job-supervisors-law

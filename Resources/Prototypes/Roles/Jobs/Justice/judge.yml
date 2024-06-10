@@ -1,0 +1,30 @@
+- type: job
+  id: Judge
+  name: job-name-judge
+  description: job-description-judge
+  playTimeTracker: JobJudge
+  startingGear: JudgeGear
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobLawyer
+      time: 3600 # 1 hour
+  weight: 10
+  icon: "JobIconJudge"
+  supervisors: job-supervisors-captain
+  access:
+  - Service
+  - Command
+  - Lawyer
+  - Brig
+  - Maintenance
+
+- type: startingGear
+  id: JudgeGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    id: LawyerPDA
+    ears: ClothingHeadsetSecurity
+    # TODO add copy of space law
+  storage:
+    back:
+    - BoxSurvival

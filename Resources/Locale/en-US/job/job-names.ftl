@@ -47,7 +47,7 @@ job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 job-name-visitor = Visitor
 job-name-clerk = Clerk
-job-name-justice = Justice
+job-name-judge = Judge
 
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Atmospheric Technician
@@ -76,7 +76,7 @@ JobERTSecurity = ERT Security
 JobHeadOfPersonnel = Head of Personnel
 JobHeadOfSecurity = Head of Security
 JobJanitor = Janitor
-JobJustice = Justice
+JobJudge = Judge
 JobLawyer = Lawyer
 JobLibrarian = Librarian
 JobMedicalDoctor = Medical doctor

@@ -13,5 +13,5 @@ job-supervisors-security = security officers, the warden, and the head of securi
 job-supervisors-science = scientists, and the research director
 job-supervisors-hire = whoever hires you
 job-supervisors-everyone = absolutely everyone
-jub-supervisors-justice = the justice
-job-supervisors-law = lawyers, and the justice
+jub-supervisors-judge = the judge
+job-supervisors-law = lawyers, and the judge

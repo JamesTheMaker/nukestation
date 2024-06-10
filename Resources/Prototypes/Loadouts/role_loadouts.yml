@@ -396,3 +396,19 @@
   - CommonBackpack
   - Glasses
   - Trinkets
+
+- type: roleLoadout
+  id: JobClerk
+  groups:
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Trinkets
+
+- type: roleLoadout
+  id: JobJudge
+  groups:
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Trinkets
