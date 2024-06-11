@@ -102,7 +102,7 @@
 - type: department
   id: Justice
   description: department-Justice-description
-  color: "#9FED58"
+  color: "#191919"
   roles:
   - Judge
   - Lawyer
