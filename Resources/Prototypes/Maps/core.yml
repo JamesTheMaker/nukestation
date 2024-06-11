@@ -49,9 +49,12 @@
             HeadOfSecurity: [ 1, 1 ]
             SecurityOfficer: [ 4, 4 ]
             Warden: [ 1, 1 ]
-            Lawyer: [ 1, 1 ]
             SecurityCadet: [ 1, 1 ]
             Detective: [ 1, 1 ]
+            #justice
+            Judge: [ 1, 1 ]
+            Lawyer: [ 1, 2 ]
+            Clerk: [ 1, 2 ]
             #supply
             CargoTechnician: [ 3, 3 ]
             Quartermaster: [ 1, 1 ]

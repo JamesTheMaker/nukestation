@@ -18,7 +18,6 @@
   - Chaplain
   - Clown
   - Janitor
-  - Lawyer
   - Librarian
   - Mime
   - Musician
@@ -39,6 +38,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  - Judge
   primary: false
 
 - type: department
@@ -98,3 +98,12 @@
   - Botanist
   - Chef
   - ServiceWorker
+
+- type: department
+  id: Justice
+  description: department-Justice-description
+  color: "#191919"
+  roles:
+  - Judge
+  - Lawyer
+  - Clerk

@@ -49,7 +49,10 @@
             Warden: [ 1, 1 ]
             SecurityOfficer: [ 6, 6 ]
             SecurityCadet: [ 3, 3 ]
+            #justice
+            Judge: [ 1, 1 ]
             Lawyer: [ 1, 2 ]
+            Clerk: [ 1, 2 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 2, 2 ]

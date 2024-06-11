@@ -413,6 +413,48 @@
 
 - type: entity
   parent: BasePDA
+  id: ClerkPDA
+  name: clerk PDA
+  description: Bureaucracy.
+  components:
+  - type: Pda
+    id: ClerkIDCard
+    state: pda-internjustice
+    penSlot:
+      startingItem: LuxuryPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#717059"
+    accentColor: "#191919"
+  - type: Icon
+    state: pda-internjustice
+
+- type: entity
+  parent: BasePDA
+  id: JudgePDA
+  name: judge PDA
+  description: Space Law above all.
+  components:
+  - type: Pda
+    id: JudgeIDCard
+    state: pda-judge
+    penSlot:
+      startingItem: LuxuryPen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentColor: "#191919"
+  - type: Icon
+    state: pda-judge
+
+- type: entity
+  parent: BasePDA
   id: JanitorPDA
   name: janitor PDA
   description: Smells like bleach.

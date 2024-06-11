@@ -6,3 +6,4 @@ department-Medical = Medical
 department-Security = Security
 department-Science = Science
 department-Personnel = Personnel
+department-Justice = Justice

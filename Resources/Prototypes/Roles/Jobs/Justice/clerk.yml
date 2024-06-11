@@ -1,0 +1,23 @@
+- type: job
+  id: Clerk
+  name: job-name-clerk
+  description: job-description-clerk
+  playTimeTracker: JobClerk
+  startingGear: ClerkGear
+  icon: "JobIconClerk"
+  supervisors: job-supervisors-law
+  access:
+  - Service
+  - Lawyer
+  - Maintenance
+
+- type: startingGear
+  id: ClerkGear
+  equipment:
+    shoes: ClothingShoesBootsLaceup
+    id: ClerkPDA
+    ears: ClothingHeadsetSecurity
+    # TODO add copy of space law
+  storage:
+    back:
+    - BoxSurvival

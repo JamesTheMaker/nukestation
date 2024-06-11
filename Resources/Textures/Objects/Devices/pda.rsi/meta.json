@@ -227,6 +227,12 @@
       "name": "pda-seniorofficer"
     },
     {
+      "name" : "pda-judge"
+    },
+    {
+      "name" : "pda-internjustice"
+    },
+    {
       "name": "equipped-IDCARD",
       "directions": 4
     }

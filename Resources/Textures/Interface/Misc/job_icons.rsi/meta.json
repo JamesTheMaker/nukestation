@@ -188,6 +188,12 @@
         },
         {
             "name": "Admin"
+        },
+        {
+            "name": "Clerk"
+        },
+        {
+            "name": "Judge"
         }
     ]
 }

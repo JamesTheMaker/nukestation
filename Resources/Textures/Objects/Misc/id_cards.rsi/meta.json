@@ -224,6 +224,12 @@
       "name": "idseniorofficer"
     },
     {
+      "name": "idjudge"
+    },
+    {
+      "name": "idintern-justice"
+    },
+    {
       "name": "gold-inhand-left",
       "directions": 4
     },

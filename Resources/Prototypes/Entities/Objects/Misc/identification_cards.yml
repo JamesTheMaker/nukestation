@@ -365,6 +365,32 @@
 
 - type: entity
   parent: IDCardStandard
+  id: ClerkIDCard
+  name: clerk ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idintern-justice
+    - type: PresetIdCard
+      job: Clerk
+
+- type: entity
+  parent: IDCardStandard
+  id: JudgeIDCard
+  name: judge ID card
+  components:
+    - type: Sprite
+      layers:
+        - state: default
+        - state: idjudge
+    - type: Item
+      heldPrefix: silver
+    - type: PresetIdCard
+      job: Judge
+
+- type: entity
+  parent: IDCardStandard
   id: HoPIDCard
   name: head of personnel ID card
   components:
@@ -647,6 +673,8 @@
     - JobIconSecurityCadet
     - JobIconZookeeper
     - JobIconVisitor
+    - JobIconJudge
+    - JobIconClerk
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
     inHandsOnly: true

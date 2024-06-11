@@ -46,6 +46,8 @@ job-name-ertjanitor = ERT Janitor
 job-name-boxer = Boxer
 job-name-zookeeper = Zookeeper
 job-name-visitor = Visitor
+job-name-clerk = Clerk
+job-name-judge = Judge
 
 # Role timers - Make these alphabetical or I cut you
 JobAtmosphericTechnician = Atmospheric Technician
@@ -61,6 +63,7 @@ JobChef = Chef
 JobChemist = Chemist
 JobChiefEngineer = Chief Engineer
 JobChiefMedicalOfficer = Chief Medical Officer
+JobClerk = Clerk
 JobClown = Clown
 JobDetective = Detective
 JobBrigmedic = Brigmedic
@@ -73,6 +76,7 @@ JobERTSecurity = ERT Security
 JobHeadOfPersonnel = Head of Personnel
 JobHeadOfSecurity = Head of Security
 JobJanitor = Janitor
+JobJudge = Judge
 JobLawyer = Lawyer
 JobLibrarian = Librarian
 JobMedicalDoctor = Medical doctor

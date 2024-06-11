@@ -19,6 +19,9 @@
     - !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
       time: 7200 # 2 hours
+    - !type:RoleTimeRequirement
+      role: JobJudge
+      time: 7200 # 2 hours
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
