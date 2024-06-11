@@ -1,14 +1,36 @@
 ﻿<Document>
   # Space Law: Controlled Substances
-  - \[Chemists/Science\] Explosive and pyrotechnic compounds excluding welding fuel contained in welders or welding fuel storage vessels
-  - \[Science\] Toxins
-  - \[Medical\] Chloral hydrate, Impedrezene, Ipecac, and Pax
-  - \[Medical\] Desoxyephedrine and Ephedrine
-  - \[None\] Mindbreaker toxin
-  - \[None\] Mute toxin
-  - \[None\] Nocturine
-  - \[None\] Norepinephirc acid
-  - \[None\] Romerol
-  - \[None\] Space drugs
-  - \[None\] Stimulants, excluding Desoxyephedrine and Ephedrine
+  The following is a list of controlled substances that are considered illegal, unless specified otherwise.
+
+  ## Explosives/Pyrotechnics
+  Unless you possess a license to practice chemistry or research, possession of explosive or pyrotechnic compounds is illegal.
+
+  ## Toxins
+  Unless you possess a license to practice research, possession of any substance classified as the following is illegal.
+  - Genitotoxins
+  - Hemotoxins
+  - Phototoxins
+  - Hepatotoxins
+  - Neurotoxins
+
+  ## Medicinal Drugs
+  The following substances are for purely medicinal use. Possession of these substances without a license to practice medicine is illegal.
+  - Chloral hydrate
+  - Impedrezene
+  - Ipecac
+  - Pax
+  - Desoxyephedrine
+  - Ephedrine
+
+  ## Narcotics
+  Under no circumstances are you allowed to possess the following substances.
+  - Mindbreaker toxin
+  - Mute toxin
+  - Nocturine
+  - Norepinephirc acid
+  - Space drugs
+  - Other stimulants
+
+  ## Romerol
+  Romerol is an extremely dangerous chemical capable of zombifying people once it enters the bloodstream. Under no circumstances are you allowed to possess this substance. Possession of this chemical is considered a capital crime.
 </Document>

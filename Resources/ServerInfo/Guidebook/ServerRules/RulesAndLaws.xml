@@ -1,15 +1,6 @@
 <Document>
   # Rules and Laws
   On board Nukestation, the terms "rules" and "laws" describe two different things:
-  - "Rules" describe the [color=#a4885c]server rules[/color]: the universal guidelines that all players, both IC and OOC, must follow. Violation of these guidelines may result in OOC punishment, such as role bans and game bans.
-  - "Laws" describe in-game laws, such as [color=#a4885c]Space Law[/color] or [color=#a4885c]Silicon Laws[/color]. Players only have to follow these guidelines IC, and will not recieve OOC punishment unless they are particularly disruptive.
-
-  ## Server Rules
-  The server rules may be found [textlink="here" link="DefaultRuleset"].
-
-  ## Space Law
-  An abbreviated version of Space Law may be found [textlink="here" link="SpaceLaw"].
-
-  ## Silicon Laws
-  Silicon Laws may be found [textlink="here" link="SiliconLaws"].
+  - "Rules" describe the [textlink="server rules" link="DefaultRuleset"]: the universal guidelines that all players, both IC and OOC, must follow. Violation of these guidelines may result in OOC punishment, such as role bans and game bans.
+  - "Laws" describe in-game laws, such as [textlink="Space Law" link="SpaceLaw"] or [textlink="Silicon Laws" link="SiliconLaws"]. Players only have to follow these guidelines IC, and will not recieve OOC punishment unless they break a rule.
 </Document>
