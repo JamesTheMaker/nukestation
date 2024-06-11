@@ -1,8 +1,19 @@
-﻿- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
+﻿- type: guideEntry
+  id: RulesAndLaws
+  name: guide-entry-rules-and-laws
+  text : "/ServerInfo/Guidebook/ServerRules/RulesAndLaws.xml"
+  children:
+  - DefaultRuleset
+  - SpaceLaw
+  - SiliconLaws
+
+- type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
   id: DefaultRuleset
   name: guide-entry-rules
-  ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
+  children:
+  - BanTypes
+  - BanDurations
 
 - type: guideEntry
   id: CoreRuleset
@@ -388,7 +399,7 @@
 - type: guideEntry
   id: SpaceLaw
   name: guide-entry-rules-space-law
-  priority: 1
+  priority: 0
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
   children:
   - SpaceLawCrimeList
@@ -423,13 +434,17 @@
 - type: guideEntry
   id: BanTypes
   name: guide-entry-rules-ban-types
-  ruleEntry: true
   priority: 90
   text: "/ServerInfo/Guidebook/ServerRules/BanTypes.xml"
 
 - type: guideEntry
   id: BanDurations
   name: guide-entry-rules-ban-durations
-  ruleEntry: true
   priority: 100
   text: "/ServerInfo/Guidebook/ServerRules/BanDurations.xml"
+
+- type: guideEntry
+  id: SiliconLaws
+  name: guide-entry-rules-silicon-laws
+  priority: 10
+  text: "/ServerInfo/Guidebook/ServerRules/SiliconLaws.xml"
