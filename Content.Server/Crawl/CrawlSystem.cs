@@ -53,7 +53,7 @@ public sealed class CrawlSystem : EntitySystem
             _standingSystem.Stand(args.BuckledEntity);
 
         if (!args.Buckling && component.Laying)
-            _standingSystem.Down(args.BuckledEntity);
+            _standingSystem.Down(args.BuckledEntity, dropHeldItems: true);
     }
 
     private void OnMobStateChanged(EntityUid uid, CrawlComponent component, MobStateChangedEvent args)
@@ -75,7 +75,7 @@ public sealed class CrawlSystem : EntitySystem
         if (!component.Laying && args.Emote.ID == component.LayEmoteId)
         {
             component.Laying = true;
-            _standingSystem.Down(uid);
+            _standingSystem.Down(uid, dropHeldItems: true);
             _modifier.RefreshMovementSpeedModifiers(uid);
         }
         else if (component.Laying && args.Emote.ID == component.StandEmoteId) // If they are laying down and want to stand, reset their movement speed.
@@ -98,7 +98,7 @@ public sealed class CrawlSystem : EntitySystem
         if (!component.Laying)
         {
             component.Laying = true;
-            _standingSystem.Down(uid);
+            _standingSystem.Down(uid, dropHeldItems: true);
             _modifier.RefreshMovementSpeedModifiers(uid);
         }
         else if (component.Laying) // If they are laying down and want to stand, reset their movement speed.
