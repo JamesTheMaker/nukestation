@@ -77,6 +77,7 @@ guide-entry-revolutionaries = Revolutionaries
 guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-space-ninja = Space Ninja
 
+guide-entry-rules-and-laws = Rules and Laws
 guide-entry-rules = Server Rules
 guide-entry-rules-core-only = Core Only Ruleset
 guide-entry-rules-lrp = Standard Ruleset
@@ -129,8 +130,10 @@ guide-entry-rules-s10 = S10
 guide-entry-rules-space-law = Space Law
 guide-entry-rules-sl-crime-list = Crime List
 guide-entry-rules-sl-controlled-substances = Controlled Substances
+guide-entry-rules-sl-weapons = Weapons
 guide-entry-rules-sl-restricted-gear = Restricted Gear
 guide-entry-rules-sl-restricted-weapons = Restricted Weapons
+guide-entry-rules-silicon-laws = Silicon Laws
 guide-entry-rules-ban-types = Ban Types
 guide-entry-rules-ban-durations = Ban Durations
 

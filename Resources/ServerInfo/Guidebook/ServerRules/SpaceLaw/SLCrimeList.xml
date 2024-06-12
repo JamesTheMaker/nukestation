@@ -35,9 +35,9 @@
         Code
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Animal Cruelty
+        Animal Cruelty (E)
       </Box>
     </ColorBox>
     <ColorBox Color="#593a4e">
@@ -70,9 +70,8 @@
         Possession: Substances (P)
       </Box>
     </ColorBox>
-    <ColorBox Color="#2f3832">
+    <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession: Gear (P)
       </Box>
     </ColorBox>
     <ColorBox Color="#2f3832">
@@ -80,8 +79,9 @@
         Possession: Weaponry (P)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession: Explosives (P)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -107,9 +107,9 @@
         Grand Theft (H)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#2e422e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Kidnapping
+        Kidnapping (H)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -259,6 +259,34 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         07
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ed9121">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Impersonation: Non-Essential (I)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ed9121">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Impersonation: Essential (I)
+      </Box>
+    </ColorBox>
+    <ColorBox Color="#ed9121">
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Impersonation: Officials (I)
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        08
       </Box>
     </ColorBox>
   </Table>
@@ -415,6 +443,26 @@
         1-07
       </Box>
     </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Impersonation of Non-Essential Employees
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To impersonate a non-essential employee of a company/organization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Janitors, interns, bartenders and passengers are all examples of non-essential employees.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        1-08
+      </Box>
+    </ColorBox>
   </Table>
 
   ## Moderate Crimes
@@ -460,28 +508,6 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         2-00
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession of Restricted Gear
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        To hold or use non-lethal items or objects that are restricted or illegal.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        This is mostly for syndicate contraband; EMAGs, syndicate gas masks, bloodred hardsuits, hijacked PDAs, or
-        syndicate implants, however can sometimes extend to things the individual shouldn't possess like kevlar vests
-        and security gear.
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-01
       </Box>
     </ColorBox>
     <ColorBox>
@@ -575,7 +601,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Possession of Restricted Weaponry
+        Possession of Illegal Weaponry
       </Box>
     </ColorBox>
     <ColorBox>
@@ -585,7 +611,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Everything from guns without a permit, deadly blades, explosives, syndicate firearms to explosive implants.
+        Everything from guns without a permit, deadly blades, and syndicate firearms.
       </Box>
     </ColorBox>
     <ColorBox>
@@ -717,6 +743,26 @@
         3-07
       </Box>
     </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Impersonation of Essential Employees
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To impersonate an essential employee of a company/organization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Department heads, doctors, and station engineers are all examples of essential employees, as their abscence would be problematic for the station.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        3-08
+      </Box>
+    </ColorBox>
   </Table>
 
   ## Extreme Crimes
@@ -763,6 +809,26 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         4-00
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Possession of Explosives
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To hold or use explosives.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Under space law, all explosives are illegal to possess or use for any purpose.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-01
       </Box>
     </ColorBox>
     <ColorBox>
@@ -823,6 +889,26 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         4-06
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Impersonation of Officials
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        To impersonate a high-ranking official of a company/organization.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Only the Captain and CentComm Officials fall into the category of high-ranking officials for Nanotrasen.
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        4-08
       </Box>
     </ColorBox>
   </Table>
