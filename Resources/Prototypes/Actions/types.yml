@@ -21,6 +21,15 @@
     checkCanInteract: false
 
 - type: entity
+  id: ActionCrawl
+  name: Toggle Crawling
+  description: Crawl on the ground.
+  components:
+    - type: InstantAction
+      icon: Interface/Actions/crawl.png
+      event: !type:CrawlActionEvent
+
+- type: entity
   id: ActionTurnUndead
   name: Turn Undead
   description: Succumb to your infection and become a zombie.
