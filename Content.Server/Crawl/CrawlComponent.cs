@@ -1,5 +1,7 @@
+using Content.Server.Crawl;
 using Content.Shared.Chat.Prototypes;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Traits;
@@ -7,14 +9,20 @@ namespace Content.Server.Traits;
 /// <summary>
 /// Allows players to lay down and stand up using emotes.
 /// </summary>
-[RegisterComponent, Access(typeof(LayEmoteSystem))]
-public sealed partial class LayEmoteComponent : Component
+[RegisterComponent, Access(typeof(CrawlSystem))]
+public sealed partial class CrawlComponent : Component
 {
     [DataField("layEmote", customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
     public string LayEmoteId = "LayDown";
 
     [DataField("standEmote", customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
     public string StandEmoteId = "StandUp";
+
+    [DataField("crawlAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string CrawlAction = "ActionCrawl";
+
+    [DataField("crawlActionEntity")]
+    public EntityUid? CrawlActionEntity;
 
     [ViewVariables]
     public bool Laying = false;

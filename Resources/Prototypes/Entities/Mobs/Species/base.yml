@@ -286,7 +286,7 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
-  - type: LayEmote # CD Change, laying down emote
+  - type: Crawl # new
 
 - type: entity
   save: false
