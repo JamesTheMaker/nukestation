@@ -72,11 +72,11 @@ public sealed class LayEmoteSystem : EntitySystem
         }
     }
 
-    // Sets their movement speed to 0.1 if they're laying down.
+    // Sets their movement speed to component.CrawlSpeed if they're laying down.
     private void OnRefreshMovementSpeedModifiers(EntityUid uid, LayEmoteComponent component, RefreshMovementSpeedModifiersEvent args)
     {
         if (component.Laying)
-            args.ModifySpeed(0.1f, 0.1f);
+            args.ModifySpeed(component.CrawlSpeed, component.CrawlSpeed);
 
         if (!component.Laying)
             args.ModifySpeed(1f, 1f);
