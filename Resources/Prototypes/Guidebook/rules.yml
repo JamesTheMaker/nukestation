@@ -404,13 +404,12 @@
   children:
   - SpaceLawCrimeList
   - SpaceLawControlledSubstances
-  - SpaceLawRestrictedGear
-  - SpaceLawRestrictedWeapons
+  - SpaceLawWeapons
 
 - type: guideEntry
   id: SpaceLawCrimeList
   name: guide-entry-rules-sl-crime-list
-  priority: 5
+  priority: 10
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 
 - type: guideEntry
@@ -418,6 +417,12 @@
   name: guide-entry-rules-sl-controlled-substances
   priority: 20
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLControlledSubstances.xml"
+
+- type: guideEntry
+  id: SpaceLawWeapons
+  name: guide-entry-rules-sl-weapons
+  priority: 30
+  text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLWeapons.xml"
 
 - type: guideEntry
   id: SpaceLawRestrictedGear
