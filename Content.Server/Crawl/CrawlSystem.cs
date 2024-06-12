@@ -1,6 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
-using Content.Server.Traits;
+using Content.Shared.Actions.Events;
 using Content.Shared.Body.Systems;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Humanoid;

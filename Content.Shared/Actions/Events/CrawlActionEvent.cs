@@ -1,6 +1,4 @@
-using Content.Shared.Actions;
-
-namespace Content.Server.Traits
+namespace Content.Shared.Actions.Events
 {
     public sealed partial class CrawlActionEvent : InstantActionEvent
     {

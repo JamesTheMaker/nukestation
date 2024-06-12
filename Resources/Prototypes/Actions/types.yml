@@ -25,10 +25,9 @@
   name: Toggle Crawling
   description: Crawl on the ground.
   components:
-  - type: InstantAction
-    useDelay: 2
-    icon: Interface/Actions/scream.png
-    event: !type:CrawlActionEvent
+    - type: InstantAction
+      icon: Interface/Actions/crawl.png
+      event: !type:CrawlActionEvent
 
 - type: entity
   id: ActionTurnUndead
