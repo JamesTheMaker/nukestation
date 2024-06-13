@@ -1,14 +1,14 @@
-using System.Threading;
 using Content.Shared.Verbs;
 using Content.Shared.Item;
 using Content.Shared.Hands;
 using Content.Shared.DoAfter;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Item.PseudoItem;
-using Content.Server.Storage.Components;
+using Content.Shared.Storage.Components;
 using Content.Server.Storage.EntitySystems;
 using Content.Server.DoAfter;
 using Robust.Shared.Containers;
+using Robust.Server.GameObjects;
 
 namespace Content.Server.Item.PseudoItem;
 public sealed partial class PseudoItemSystem : EntitySystem
@@ -16,6 +16,7 @@ public sealed partial class PseudoItemSystem : EntitySystem
     [Dependency] private readonly StorageSystem _storageSystem = default!;
     [Dependency] private readonly ItemSystem _itemSystem = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -35,10 +36,10 @@ public sealed partial class PseudoItemSystem : EntitySystem
         if (component.Active)
             return;
 
-        if (!TryComp<ServerStorageComponent>(args.Target, out var targetStorage))
+        if (!TryComp<SharedEntityStorageComponent>(args.Target, out var targetStorage))
             return;
 
-        if (component.Size > targetStorage.StorageCapacityMax - targetStorage.StorageUsed)
+        if (_storageSystem.CanInsert(uid, args.Target, out var reason))
             return;
 
         if (Transform(args.Target).ParentUid == uid)
@@ -67,7 +68,7 @@ public sealed partial class PseudoItemSystem : EntitySystem
         if (args.Hands == null)
             return;
 
-        if (!TryComp<ServerStorageComponent>(args.Hands.ActiveHandEntity, out var targetStorage))
+        if (!TryComp<SharedEntityStorageComponent>(args.Hands.ActiveHandEntity, out var targetStorage))
             return;
 
         AlternativeVerb verb = new()
@@ -113,40 +114,39 @@ public sealed partial class PseudoItemSystem : EntitySystem
         args.Handled = TryInsert(args.Args.Used.Value, uid, component);
     }
 
-    public bool TryInsert(EntityUid storageUid, EntityUid toInsert, PseudoItemComponent component, ServerStorageComponent? storage = null)
+    public bool TryInsert(EntityUid uid, EntityUid insertEnt, PseudoItemComponent component, SharedEntityStorageComponent? storage = null)
     {
-        if (!Resolve(storageUid, ref storage))
+        if (!Resolve(uid, ref storage))
             return false;
 
-        if (component.Size > storage.StorageCapacityMax - storage.StorageUsed)
+        if (_storageSystem.CanInsert(uid, insertEnt, out var cr))
             return false;
 
-        var item = EnsureComp<ItemComponent>(toInsert);
-        _itemSystem.SetSize(toInsert, component.Size, item);
+        // var item = EnsureComp<ItemComponent>(insertEnt);
+        // _itemSystem.SetSize(insertEnt, component.Size, item);
 
-        if (!_storageSystem.Insert(storageUid, toInsert, storage))
+        if (!_storageSystem.Insert(uid, insertEnt, out var r))
         {
             component.Active = false;
-            RemComp<ItemComponent>(toInsert);
+            RemComp<ItemComponent>(insertEnt);
             return false;
         }
         else
         {
             component.Active = true;
-            Transform(storageUid).AttachToGridOrMap();
+            _transform.AttachToGridOrMap(uid);
             return true;
         }
     }
-    private void StartInsertDoAfter(EntityUid inserter, EntityUid toInsert, EntityUid storageEntity, PseudoItemComponent? pseudoItem = null)
+    private void StartInsertDoAfter(EntityUid inserter, EntityUid insertEnt, EntityUid storageEntity, PseudoItemComponent? pseudoItem = null)
     {
-        if (!Resolve(toInsert, ref pseudoItem))
+        if (!Resolve(insertEnt, ref pseudoItem))
             return;
 
         var ev = new PseudoItemInsertDoAfterEvent();
-        var args = new DoAfterArgs(inserter, 5f, ev, toInsert, target: toInsert, used: storageEntity)
+        var args = new DoAfterArgs(EntityManager, inserter, 5f, ev, insertEnt, insertEnt, storageEntity)
         {
-            BreakOnTargetMove = true,
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             NeedHand = true
         };
 

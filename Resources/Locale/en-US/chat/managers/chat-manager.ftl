@@ -150,3 +150,9 @@ chat-speech-verb-name-electricity = Electricity
 chat-speech-verb-electricity-1 = crackles
 chat-speech-verb-electricity-2 = buzzes
 chat-speech-verb-electricity-3 = screeches
+
+chat-speech-verb-name-felinid = Felinid
+chat-speech-verb-felinid-1 = mraows
+chat-speech-verb-felinid-2 = mews
+chat-speech-verb-felinid-3 = meows
+chat-speech-verb-felinid-4 = purrs out

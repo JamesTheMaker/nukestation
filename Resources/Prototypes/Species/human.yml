@@ -19,6 +19,7 @@
   sprites:
     Head: MobHumanHead
     Hair: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobHumanTorso
@@ -31,6 +32,7 @@
     RLeg: MobHumanRLeg
     LFoot: MobHumanLFoot
     RFoot: MobHumanRFoot
+    Tail: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobHumanMarkingLimits

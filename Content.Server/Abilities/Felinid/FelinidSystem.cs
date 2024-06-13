@@ -8,15 +8,16 @@ using Content.Shared.Hands;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Actions.Events;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Medical;
 using Content.Server.Nutrition.Components;
 using Content.Server.Popups;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
-using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Shared.Actions.Events;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.GameObjects;
 
 namespace Content.Server.Abilities.Felinid;
 
@@ -24,9 +25,10 @@ public sealed partial class FelinidSystem : EntitySystem
 {
 
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly HungerSystem _hungerSystem = default!;
     [Dependency] private readonly VomitSystem _vomitSystem = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionSystem = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
@@ -35,7 +37,7 @@ public sealed partial class FelinidSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<FelinidComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<FelinidComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<FelinidComponent, HairballActionEvent>(OnHairball);
         SubscribeLocalEvent<FelinidComponent, EatMouseActionEvent>(OnEatMouse);
         SubscribeLocalEvent<FelinidComponent, DidEquipHandEvent>(OnEquipped);
@@ -67,13 +69,12 @@ public sealed partial class FelinidSystem : EntitySystem
         }
     }
 
-    private void OnInit(EntityUid uid, FelinidComponent component, ComponentInit args)
+    private void OnMapInit(EntityUid uid, FelinidComponent component, MapInitEvent args)
     {
         if (component.HairballAction != null)
             return;
 
-        component.HairballAction = Spawn("ActionHairball");
-        _actionsSystem.AddAction(uid, component.HairballAction.Value, uid);
+        _actionsSystem.AddAction(uid, ref component.HairballActionEntity, component.HairballAction);
     }
 
     private void OnEquipped(EntityUid uid, FelinidComponent component, DidEquipHandEvent args)
@@ -83,8 +84,7 @@ public sealed partial class FelinidSystem : EntitySystem
 
         component.EatActionTarget = args.Equipped;
 
-        component.EatAction = Spawn("ActionEatMouse");
-        _actionsSystem.AddAction(uid, component.EatAction.Value, null);
+        _actionsSystem.AddAction(uid, ref component.EatActionEntity, component.EatAction);
     }
 
     private void OnUnequipped(EntityUid uid, FelinidComponent component, DidUnequipHandEvent args)
@@ -93,7 +93,7 @@ public sealed partial class FelinidSystem : EntitySystem
         {
             component.EatActionTarget = null;
             if (component.EatAction != null)
-                _actionsSystem.RemoveAction(uid, component.EatAction.Value);
+                _actionsSystem.RemoveAction(component.EatActionEntity);
         }
     }
 
@@ -108,7 +108,7 @@ public sealed partial class FelinidSystem : EntitySystem
         }
 
         _popupSystem.PopupEntity(Loc.GetString("hairball-cough", ("name", Identity.Entity(uid, EntityManager))), uid);
-        SoundSystem.Play("/Audio/Effects/Species/hairball.ogg", Filter.Pvs(uid), uid, AudioHelpers.WithVariation(0.15f));
+        _audioSystem.PlayPvs("/Audio/Effects/Species/hairball.ogg", uid, AudioHelpers.WithVariation(0.15f, _robustRandom));
 
         EnsureComp<CoughingUpHairballComponent>(uid);
         args.Handled = true;
@@ -138,18 +138,18 @@ public sealed partial class FelinidSystem : EntitySystem
 
         if (component.HairballAction != null)
         {
-            _actionsSystem.SetCharges(component.HairballAction, 1); // You get the charge back and that's it. Tough.
-            _actionsSystem.SetEnabled(component.HairballAction, true);
+            _actionsSystem.SetCharges(component.HairballActionEntity, 1); // You get the charge back and that's it. Tough.
+            _actionsSystem.SetEnabled(component.HairballActionEntity, true);
         }
-        Del(component.EatActionTarget.Value);
+        Del(component.EatActionTarget);
         component.EatActionTarget = null;
 
-        SoundSystem.Play("/Audio/Items/eatfood.ogg", Filter.Pvs(uid), uid, AudioHelpers.WithVariation(0.15f));
+        _audioSystem.PlayPvs("/Audio/Items/eatfood.ogg", uid, AudioHelpers.WithVariation(0.15f, _robustRandom));
 
         _hungerSystem.ModifyHunger(uid, 50f, hunger);
 
         if (component.EatAction != null)
-            _actionsSystem.RemoveAction(uid, component.EatAction.Value);
+            _actionsSystem.RemoveAction(uid, component.EatActionEntity);
     }
 
     private void SpawnHairball(EntityUid uid, FelinidComponent component)
@@ -159,11 +159,14 @@ public sealed partial class FelinidSystem : EntitySystem
 
         if (TryComp<BloodstreamComponent>(uid, out var bloodstream))
         {
-            var temp = bloodstream.ChemicalSolution.SplitSolution(20);
-
-            if (_solutionSystem.TryGetSolution(hairball, hairballComp.SolutionName, out var hairballSolution))
+            if (_solutionSystem.ResolveSolution(uid, bloodstream.ChemicalSolutionName, ref bloodstream.ChemicalSolution, out var solution))
             {
-                _solutionSystem.TryAddSolution(hairball, hairballSolution, temp);
+                var temp = solution.SplitSolution(20);
+
+                if (_solutionSystem.TryGetSolution(hairball, hairballComp.SolutionName, out var hairballSolution))
+                {
+                    _solutionSystem.TryAddSolution(hairballSolution.Value, temp);
+                }
             }
         }
     }
