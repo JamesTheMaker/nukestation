@@ -30,6 +30,28 @@
       event: !type:CrawlActionEvent
 
 - type: entity
+  id: ActionEatMouse
+  name: action-name-eat-mouse
+  description: action-description-eat-mouse
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Interface/Actions/fangs.png
+    event: !type:EatMouseActionEvent
+
+- type: entity
+  id: ActionHairball
+  name: action-name-hairball
+  description: action-description-hairball
+  noSpawn: true
+  components:
+  - type: InstantAction
+    charges: 1
+    icon: { sprite: Objects/Specific/Species/felinid.rsi, state: icon }
+    useDelay: 30
+    event: !type:HairballActionEvent
+
+- type: entity
   id: ActionTurnUndead
   name: Turn Undead
   description: Succumb to your infection and become a zombie.

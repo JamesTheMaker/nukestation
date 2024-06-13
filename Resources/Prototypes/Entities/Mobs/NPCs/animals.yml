@@ -1654,6 +1654,7 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: FelinidFood
 
 - type: entity
   parent: MobMouse

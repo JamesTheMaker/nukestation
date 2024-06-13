@@ -120,6 +120,7 @@
   - type: Grammar
     attributes:
       gender: male
+  - type: FelinidFood
 
 - type: entity
   id: MobRatKingBuff
