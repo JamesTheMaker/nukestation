@@ -26,5 +26,5 @@ public sealed partial class CrawlComponent : Component
     public bool Laying = false;
 
     [ViewVariables]
-    public float CrawlSpeed = 0.1f;
+    public float CrawlSpeed = 0.33f;
 }
