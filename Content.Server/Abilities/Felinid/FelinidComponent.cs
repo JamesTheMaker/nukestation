@@ -15,12 +15,12 @@ public sealed partial class FelinidComponent : Component
     public string HairballPrototype = "Hairball";
 
     [DataField("hairballAction")]
-    public string? HairballAction = null;
+    public string? HairballAction = "ActionHairball";
 
     public EntityUid? HairballActionEntity;
 
     [DataField("EatAction")]
-    public string? EatAction = null;
+    public string? EatAction = "ActionEatMouse";
 
     public EntityUid? EatActionEntity;
 

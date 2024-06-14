@@ -144,7 +144,8 @@ public sealed partial class FelinidSystem : EntitySystem
         Del(component.EatActionTarget);
         component.EatActionTarget = null;
 
-        _audioSystem.PlayPvs("/Audio/Items/eatfood.ogg", uid, AudioHelpers.WithVariation(0.15f, _robustRandom));
+        var eatingSound = "/Audio/Items/eating_" + _robustRandom.Next(1, 3) + ".ogg";
+        _audioSystem.PlayPvs(eatingSound, uid, AudioHelpers.WithVariation(0.15f, _robustRandom));
 
         _hungerSystem.ModifyHunger(uid, 50f, hunger);
 
