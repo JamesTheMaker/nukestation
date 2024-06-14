@@ -97,7 +97,7 @@ public sealed partial class PseudoItemSystem : EntitySystem
         if (args.User == args.Item)
             return;
 
-        Transform(uid).AttachToGridOrMap();
+        _transform.AttachToGridOrMap(uid);
         args.Cancel();
     }
 

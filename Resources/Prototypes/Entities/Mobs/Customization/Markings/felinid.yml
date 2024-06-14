@@ -151,3 +151,23 @@
     state: basic_bow
   - sprite: Mobs/Customization/felinid_tails.rsi
     state: basic_bell
+
+- type: marking
+  id: FelinidTailFluffy
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Felinid]
+  sprites:
+  - sprite: Mobs/Customization/felinid_tails.rsi
+    state: fluffy_full
+
+- type: marking
+  id: FelinidTailFluffyWithStripes
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Felinid]
+  sprites:
+  - sprite: Mobs/Customization/felinid_tails.rsi
+    state: fluffy_full
+  - sprite: Mobs/Customization/felinid_tails.rsi
+    state: fluffy_stripes
