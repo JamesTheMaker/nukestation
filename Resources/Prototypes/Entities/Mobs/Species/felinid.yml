@@ -54,7 +54,8 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
-  - type: Felinid
+  # System doesn't work
+  # - type: Felinid
 
 - type: entity
   save: false
