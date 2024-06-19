@@ -23,7 +23,8 @@ public sealed class CrawlSystem : EntitySystem
 
         SubscribeLocalEvent<CrawlComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<CrawlComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<CrawlComponent, BuckleChangeEvent>(OnBuckleChange);
+        SubscribeLocalEvent<CrawlComponent, BuckledEvent>(OnBuckled);
+        SubscribeLocalEvent<CrawlComponent, UnbuckledEvent>(OnUnbuckled);
         SubscribeLocalEvent<CrawlComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<CrawlComponent, EmoteEvent>(OnEmote);
         SubscribeLocalEvent<CrawlComponent, CrawlActionEvent>(OnCrawlAction);
@@ -46,14 +47,18 @@ public sealed class CrawlSystem : EntitySystem
         _actions.RemoveAction(uid, component.CrawlActionEntity);
     }
 
-    // If buckled, make sure someone is standing. Unbuckling while laying down should keep someone laying down and vice versa.
-    private void OnBuckleChange(EntityUid uid, CrawlComponent component, ref BuckleChangeEvent args)
+    // If crawling, stand back up when buckled
+    private void OnBuckled(EntityUid uid, CrawlComponent component, ref BuckledEvent args)
     {
-        if (args.Buckling && component.Laying)
-            _standingSystem.Stand(args.BuckledEntity);
+        if (component.Laying)
+            _standingSystem.Stand(args.Buckle.Owner);
+    }
 
-        if (!args.Buckling && component.Laying)
-            _standingSystem.Down(args.BuckledEntity, dropHeldItems: true);
+    // If crawling, return to crawling when unbuckled
+    private void OnUnbuckled(EntityUid uid, CrawlComponent component, ref UnbuckledEvent args)
+    {
+        if (component.Laying)
+            _standingSystem.Down(args.Buckle.Owner, dropHeldItems: false);
     }
 
     private void OnMobStateChanged(EntityUid uid, CrawlComponent component, MobStateChangedEvent args)
@@ -75,7 +80,7 @@ public sealed class CrawlSystem : EntitySystem
         if (!component.Laying && args.Emote.ID == component.LayEmoteId)
         {
             component.Laying = true;
-            _standingSystem.Down(uid, dropHeldItems: true);
+            _standingSystem.Down(uid, dropHeldItems: false);
             _modifier.RefreshMovementSpeedModifiers(uid);
         }
         else if (component.Laying && args.Emote.ID == component.StandEmoteId) // If they are laying down and want to stand, reset their movement speed.
@@ -98,7 +103,7 @@ public sealed class CrawlSystem : EntitySystem
         if (!component.Laying)
         {
             component.Laying = true;
-            _standingSystem.Down(uid, dropHeldItems: true);
+            _standingSystem.Down(uid, dropHeldItems: false);
             _modifier.RefreshMovementSpeedModifiers(uid);
         }
         else if (component.Laying) // If they are laying down and want to stand, reset their movement speed.
