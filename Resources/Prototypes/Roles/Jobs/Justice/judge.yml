@@ -28,5 +28,4 @@
     # TODO add copy of space law
   storage:
     back:
-    - BoxSurvival
     - RubberStampJudge
